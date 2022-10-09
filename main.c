@@ -24,11 +24,14 @@ int main(int argc, char **argv)
 		while ((nread = getline(&buff, &len, stream)) != -1)
 		{
 			buff[strlen(buff) - 1] = '\0';
-			num = atoi(buff);
-			for (i = 2; num % i != 0; i++)
+			if (strlen(buff) <= 20)
 			{
+				num = atoll(buff);
+				for (i = 2; num % i != 0; i++)
+				{
+				}
+				printf("%lu=%lu*%lu\n", num, (num / i), i);
 			}
-			printf("%lu=%lu*%lu\n", num, (num / i), i);
 		}
 	}
 	return (0);
