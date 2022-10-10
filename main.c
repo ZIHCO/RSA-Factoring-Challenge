@@ -24,7 +24,7 @@ int main(int argc, char **argv)
 		while ((nread = getline(&buff, &len, stream)) != -1)
 		{
 			buff[strlen(buff) - 1] = '\0';
-			if (strlen(buff) <= 20)
+			if (strlen(buff) < 20)
 			{
 				num = atol(buff);
 				for (i = 2; num % i != 0; i++)
